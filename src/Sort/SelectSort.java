@@ -1,7 +1,9 @@
 package Sort;
 
 public class SelectSort {
+
     public int[] selectSort(int[] nums) {
+
         int len = nums.length;
         for (int i = len - 1; i > 0; i--) {
             int max = nums[i];
@@ -17,7 +19,9 @@ public class SelectSort {
         return nums;
     }
 
+
     public static void main(String[] args) {
+
         //test
         int[] nums = {1, 24, 124, 22, 12, 3, 4, 1};
         BubbleSort bubbleSort = new BubbleSort();
