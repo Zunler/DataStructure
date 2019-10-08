@@ -30,7 +30,7 @@ public class List<AnyType> {
     public void initList(int size) {
 
         this.size = size;
-        elements = (AnyType[]) new Object[size];
+        elements = (AnyType[]) new Object[size];//初始化范型数组
     }
 
     /**
