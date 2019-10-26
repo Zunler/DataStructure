@@ -19,7 +19,50 @@ package Sort;
  * @since 1.0.0
  */
 public class ShellSort {
-    public   void sort(int[] nums){
+    static int cnt = 0;
 
+    public void insertionSort(int[] A, int n, int g) {
+        for (int i = g; i < n; i++) {
+            int v = A[i];
+            int j = i - g;
+            while (j >= 0 && A[j] > v) {
+                A[j + g] = A[j];
+                j = j - g;
+                cnt++;
+
+            }
+            A[j + g] = v;
+
+
+        }
+    }
+
+    public void sort(int[] A) {
+        int n = A.length;
+        int m = (int) Math.ceil((A.length - 1) / 3.0);
+        int[] G = new int[m];
+        G[0] = 1;
+        for (int i = 1; i < m; i++) {
+            G[i] = 3 * G[i-1] + 1;
+
+        }
+        for (int i = m - 1; i >=    0; i--) {
+            insertionSort(A, n, G[i]);
+
+        }
+
+
+    }
+
+    public static void main(String[] args) {
+
+        int[] nums = {1, 23, 12, 234, 13, 4};
+        ShellSort shellSort = new ShellSort();
+        shellSort.sort(nums);
+        for (int num :
+                nums) {
+            System.out.println(num);
+
+        }
     }
 }
